@@ -10,6 +10,12 @@ const app = express();
 
 app.use(bodyParser.json())
 
+app.use(cors({
+  origin: 'http://localhost:4200',
+  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'PUT'],
+  allowedHeaders: 'Content-Type, Authorization, Origin, X-Requested-With, Accept'
+}));
+
 // Import Routes
 const productsRoute = require('./routes/products');
 const ordersRoute = require('./routes/orders');
@@ -17,12 +23,6 @@ const ordersRoute = require('./routes/orders');
 // Use Routes
 app.use('/api/products', productsRoute);
 app.use('/api/orders', ordersRoute);
-
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'PUT'],
-  allowedHeaders: 'Content-Type, Authorization, Origin, X-Requested-With, Accept'
-}));
 
 app.use(logger('dev'));
 app.use(express.json());
