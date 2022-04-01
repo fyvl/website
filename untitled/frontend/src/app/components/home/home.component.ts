@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {Router} from "@angular/router";
-import {ProductModelServer, serverResponse} from "../../models/product.models";
+import {ProductModelServer, serverResponse} from "../../models/product.model";
 
 @Component({
   selector: 'app-home',
