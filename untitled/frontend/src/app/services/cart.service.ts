@@ -166,7 +166,7 @@ export class CartService {
       data.numInCart--;
 
       if (data.numInCart < 1) {
-        // todo delete the product from cart
+        this.DeleteProductFromCart(index);
         this.cartData$.next({...this.cartServerData});
       } else {
         this.cartData$.next({...this.cartServerData});
@@ -269,6 +269,15 @@ export class CartService {
       total: 0
     };
     this.cartData$.next({...this.cartServerData});
+  }
+
+  CalculateSubTotal(index: number) {
+    let subTotal = 0;
+
+    const p = this.cartServerData.data[index];
+    subTotal = p.product.price * p.numInCart;
+
+    return subTotal;
   }
 }
 
