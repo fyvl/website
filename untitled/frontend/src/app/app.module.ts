@@ -7,7 +7,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
-import { ChekoutComponent } from './components/chekout/chekout.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
@@ -21,7 +21,7 @@ import {ToastrModule} from "ngx-toastr";
     HeaderComponent,
     FooterComponent,
     CartComponent,
-    ChekoutComponent,
+    CheckoutComponent,
     HomeComponent,
     ProductComponent,
     ThankyouComponent

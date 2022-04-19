@@ -1,8 +1,8 @@
 <div class="container my-5">
   <!-- When the cart is empty-->
   <div class="text-center my-5" *ngIf="cartData.data[0].numInCart===0;">
-    <h4>Your Cart Is Empty</h4>
-    <button class="btn btn-primary btn-lg mt-3" routerLink="/">GO TO SHOP</button>
+    <h4>Ваша корзина пуста</h4>
+    <button class="btn btn-primary btn-lg mt-3" routerLink="/">ВЕРНУТЬСЯ В МАГАЗИН</button>
   </div>
 
   <!--When the cart has any items -->
@@ -12,11 +12,11 @@
         <table class="table">
           <thead class="table-dark">
             <tr class="text-center">
-              <th>Image</th>
-              <th>Title</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
+              <th>Изображение</th>
+              <th>Название</th>
+              <th>Цена</th>
+              <th>Количество</th>
+              <th>Пром. итог</th>
             </tr>
           </thead>
 
@@ -32,7 +32,7 @@
               </td>
 
               <td>
-                <p>{{c.product.price | currency: 'USD'}}</p>
+                <p><i class="fa fa-ruble"></i> {{c.product.price}}</p>
               </td>
 
               <td>
@@ -48,7 +48,7 @@
               </td>
 
               <td>
-                <p>{{cartService.CalculateSubTotal(i) | currency: 'USD'}}</p>
+                <p><i class="fa fa-ruble"></i> {{cartService.CalculateSubTotal(i)}}</p>
               </td>
             </tr>
 
@@ -56,12 +56,20 @@
               <td style="border: none;"></td>
               <td></td>
               <td></td>
-              <td>TOTAL</td>
-              <td>{{cartTotal | currency: 'USD'}}</td>
+              <td>ИТОГ</td>
+              <td><i class="fa fa-ruble"></i> {{cartTotal}}</td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      <div class="col-md-12 d-flex mb-5">
+        <div class="d-flex justify-content-between flex-sm-column flex-md-row w-100">
+          <a routerLink="/checkout" class="btn btn-danger btn-sm order-1">Оформление</a>
+          <a routerLink="/" class="btn btn-success btn-sm order-0">Продолжить покупки</a>
+        </div>
+      </div>
+
     </div>
   </ng-container>
 

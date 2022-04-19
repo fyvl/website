@@ -50,7 +50,7 @@ router.get('/:id', (req, res) => {
                 on: 'u.id = o.user_id'
             }
         ])
-        .withFields(['o.id', 'p.title as name', 'p.description', 'p.price', 'u.username'])
+        .withFields(['o.id', 'p.title as name', 'p.description', 'p.price', 'u.username', 'p.image', 'od.quantity as quantityOrdered'])
         .filter({'o.id': orderId})
         .getAll()
         .then(orders => {
@@ -77,8 +77,9 @@ router.post('/new', async (req, res) => {
                     products.forEach(async (p) => {
 
                         let data = await database.table('products').filter({id: p.id}).withFields(['quantity']).get();
-                        let inCart = parseInt(p.incart);
+                        let inCart = parseInt(p.inCart);
 
+                        console.log(data);
                         if (data.quantity > 0){
                             data.quantity = data.quantity - inCart;
 
@@ -93,7 +94,7 @@ router.post('/new', async (req, res) => {
                             .insert({
                                 order_id: newOrderId.insertId,
                                 product_id: p.id,
-                                quantity: inCart
+                                quantity : inCart
                             }).then(newId => {
                                 database.table('products')
                                     .filter({id: p.id})
@@ -104,7 +105,7 @@ router.post('/new', async (req, res) => {
                         }).catch(err => console.log(err));
                     });
                 } else {
-                    //res.json({message: 'new order failed while adding order details', success: false});
+                    res.json({message: 'new order failed while adding order details', success: false});
                 }
                 res.json({
                     message: `Order successfully placed with order id ${newOrderId.insertId}`,
