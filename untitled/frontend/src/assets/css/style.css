@@ -411,8 +411,8 @@ textarea.input {
 \*----------------------------*/
 
 #top-header {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 3px;
+  padding-bottom: 25px;
   background-color: #1E1F29;
 }
 
@@ -470,7 +470,7 @@ textarea.input {
 }
 
 .header-search form .input-select {
-  margin-right: -4px;
+  margin-right: -3px;
   border-radius: 40px 0px 0px 40px;
 }
 
@@ -487,6 +487,8 @@ textarea.input {
   font-weight: 700;
   border: none;
   border-radius: 0px 40px 40px 0px;
+  padding-top: 2px;
+  margin-left: 4px;
 }
 
 /*----------------------------*\
