@@ -26,6 +26,16 @@ export class UserService {
       });
   }
 
+  // Register User
+  registerUser(email: string, password: string, username: string, fname: string, lname: string) {
+    this.httpClient.post<ResponseModel>(`${this.SERVER_URL}/auth/register`, {email, password, username, fname, lname})
+      .subscribe((data) => {
+        this.auth = data.auth;
+        this.authState$.next(this.auth);
+        this.userData$.next(data);
+      });
+  }
+
   logout() {
     this.auth = false;
     this.authState$.next(this.auth);

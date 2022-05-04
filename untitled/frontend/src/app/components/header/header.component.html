@@ -9,8 +9,7 @@
         <li><a href="#"><i class="fa fa-map-marker"></i> СФУ ИКИТ</a></li>
       </ul>
       <ul class="header-links pull-right">
-        <li><a href="#"><i class="fa fa-ruble"></i> RUB</a></li>
-        <li><a href="#"><i class="fa fa-user-o"></i> Мой Аккаунт</a></li>
+        <li><a routerLink="/profile"><i class="fa fa-user-o"></i> {{authState === false ? 'LOGIN' : 'My Account'}} </a></li>
       </ul>
     </div>
   </div>

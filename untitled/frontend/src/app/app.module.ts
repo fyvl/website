@@ -16,6 +16,8 @@ import {NgxSpinnerModule} from "ngx-spinner";
 import {ToastrModule} from "ngx-toastr";
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import {FormsModule} from "@angular/forms";
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     ProductComponent,
     ThankyouComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     HttpClientModule,
     NgxSpinnerModule,
     ToastrModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
