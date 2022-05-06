@@ -11,6 +11,7 @@ import {UserService} from "../../services/user.service";
 export class LoginComponent implements OnInit {
   email!: string;
   password!: string;
+  loginMessage: string;
 
   constructor(private router: Router,
               private userService: UserService,
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
       } else {
         this.router.navigateByUrl('/login');
       }
-    })
+    });
   }
 
   login(form: NgForm) {
@@ -34,13 +35,15 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    //form.reset();
-    this.userService.loginUser(email, password);
     form.reset();
-    console.log(email, password);
-  }
+    this.userService.loginUser(email, password);
 
-  reg() {
-    this.router.navigateByUrl('/registration');
+    this.userService.loginMessage$.subscribe(msg => {
+      this.loginMessage = msg;
+      setTimeout(() => {
+        this.loginMessage = '';
+      }, 2000);
+    });
+
   }
 }

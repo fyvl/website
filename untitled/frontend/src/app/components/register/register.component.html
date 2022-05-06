@@ -74,22 +74,22 @@
       </div>
       <div class="col-md-3">
         <div class="form-control-feedback">
-          <ng-container *ngIf="formControls.email.errors?.taken && formControls.email.touched">
+          <ng-container *ngIf="formControls?.['email'].errors?.['taken'] && formControls?.['email'].touched">
              <span class="text-danger align-middle">
                 <i class="fa fa-close"> Email Already Taken</i>
              </span>
           </ng-container>
-          <ng-container *ngIf="formControls.email.pending && formControls.email.touched">
+          <ng-container *ngIf="formControls?.['email'].pending && formControls?.['email'].touched">
             <span class="text-info align-middle">
               <i class="fa fa-hourglass"> Checking Email ....</i>
             </span>
           </ng-container>
-          <ng-container *ngIf="!formControls.email.errors && formControls.email.touched && !formControls.email.pending">
+          <ng-container *ngIf="!formControls?.['email'].errors && formControls?.['email'].touched && !formControls?.['email'].pending">
              <span class="text-success align-middle">
                             <i class="fa fa-check"> Email Available</i>
                         </span>
           </ng-container>
-          <ng-container *ngIf="formControls.email.errors?.required && formControls.email.touched">
+          <ng-container *ngIf="formControls?.['email'].errors?.['required'] && formControls?.['email'].touched">
                           <span class="text-danger align-middle">
                             <i class="fa fa-check"> Email Required</i>
                         </span>
@@ -135,7 +135,7 @@
       </div>
       <div class="col-md-3">
         <div class="form-control-feedback">
-          <ng-container *ngIf="!comparePassword && formControls.confirmPassword.touched">
+          <ng-container *ngIf="!comparePassword && formControls?.['confirmPassword'].touched">
                           <span class="text-danger align-middle">
                             <i class="fa fa-close"> Passwords don't match</i>
                         </span>
@@ -146,7 +146,7 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">
-        <button [disabled]="(registrationForm.invalid || registrationForm.pending) && registrationForm.touched "
+        <button [disabled]="(registrationForm.invalid || registrationForm.pending) && registrationForm.touched"
                 class="btn btn-success" type="submit">
           <i class="fa fa-user-plus"></i> Register
         </button>

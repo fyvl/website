@@ -41,11 +41,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.registrationForm.valueChanges
       .pipe(map((controls) => {
-        //return this.formControls.confirmPassword.value === this.formControls.password.value;
+        return this.formControls?.['confirmPassword'].value === this.formControls?.['password'].value;
       }))
       .subscribe(passwordState => {
         console.log(passwordState);
-        //this.comparePassword = passwordState;
+        this.comparePassword = passwordState;
       });
   }
 

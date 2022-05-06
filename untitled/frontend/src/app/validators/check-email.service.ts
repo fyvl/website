@@ -8,6 +8,7 @@ import {Observable, timer} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class CheckEmailService {
   SERVER_URL = environment.SERVER_URL;
 
