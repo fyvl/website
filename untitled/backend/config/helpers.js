@@ -5,8 +5,8 @@ const bcrypt = require('bcrypt');
 let conn = new MySQLi({
     host: 'localhost',
     post: 3306,
-    user: 'yaroslav',
-    password: '4867590',
+    user: 'root',
+    password: '',
     db: 'shop'
 });
 

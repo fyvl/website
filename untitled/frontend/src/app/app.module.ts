@@ -17,7 +17,9 @@ import {ToastrModule} from "ngx-toastr";
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CatalogComponent } from './components/catalog/catalog.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ThankyouComponent,
     LoginComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    CatalogComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -26,7 +26,7 @@ export class ProductService {
   }
 
   /* GET PRODUCTS FROM SAME CATEGORY */
-  getProductsFromCategory(catName: string): Observable<ProductModelServer[]> {
-    return this.http.get<ProductModelServer[]>(this.serverUrl + '/products/category/' + catName);
+  getProductsFromCategory(catName: string): Observable<serverResponse> {
+    return this.http.get<serverResponse>(this.serverUrl + '/products/category/' + catName);
   }
 }
