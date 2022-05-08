@@ -7,8 +7,9 @@ router.get('/', function(req, res) {
 
   database.table('categories as c')
       .withFields([
+        'c.id as id',
         'c.title as title',
-        'c.id as id'
+        'c.image as image'
       ])
       .sort({id: .1})
       .getAll()

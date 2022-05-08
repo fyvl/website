@@ -16,7 +16,6 @@ export class CatalogComponent implements OnInit {
   products: ProductModelServer[] = [];
 
   constructor(private categoryService: CategoriesService,
-              private productService: ProductService,
               private router: Router) { }
 
   ngOnInit() {

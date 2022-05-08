@@ -11,6 +11,8 @@ import {ProfileComponent} from "./components/profile/profile.component";
 import {ProfileGuard} from "./guard/profile.guard";
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { CategoryComponent } from './components/category/category.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { HotdealsComponent } from './components/hotdeals/hotdeals.component';
 
 const routes: Routes = [
   {
@@ -42,6 +44,12 @@ const routes: Routes = [
   },
   {
     path: 'category', component: CategoryComponent
+  },
+  {
+    path: 'contacts', component: ContactsComponent
+  },
+  {
+    path: 'hotdeals', component: HotdealsComponent
   },
   {
     path: '**', pathMatch: 'full', redirectTo: ''

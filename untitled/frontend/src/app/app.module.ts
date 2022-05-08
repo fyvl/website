@@ -20,6 +20,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CategoryComponent } from './components/category/category.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { HotdealsComponent } from './components/hotdeals/hotdeals.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CategoryComponent } from './components/category/category.component';
     ProfileComponent,
     RegisterComponent,
     CatalogComponent,
-    CategoryComponent
+    CategoryComponent,
+    ContactsComponent,
+    HotdealsComponent
   ],
   imports: [
     BrowserModule,
