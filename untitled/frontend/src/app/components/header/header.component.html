@@ -56,20 +56,23 @@
               <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="cursor: pointer">
                 <i class="fa fa-heart-o"></i>
                 <span>Избранное</span>
-                <div class="qty">0</div>
+                <div class="qty">{{favData.data[0].numInFav !== 0 ? favData.data.length : 0}}</div>
               </a>
               <div class="cart-dropdown">
-                <div class="cart-list" *ngIf="cartData.data[0].numInCart !== 0">
-                  <div class="product-widget" *ngFor="let c of cartData.data; let i = index">
+                <div class="cart-list" *ngIf="favData.data[0].numInFav !== 0">
+                  <div class="product-widget" *ngFor="let c of favData.data; let i = index">
                     <div class="product-img">
                       <img [src]="c.product?.image" alt="{{c.product.name}}" width="20px">
                     </div>
                     <div class="product-body">
                       <h3 class="product-name"><a href="#">{{c.product.name}}</a></h3>
-                      <h4 class="product-price"><span class="qty">{{c.numInCart}} x </span> <i class="fa fa-ruble"></i> {{c.product?.price}} </h4>
+                      <h4 class="product-price"><span class="qty">{{c.numInFav}} x </span> <i class="fa fa-ruble"></i> {{c.product?.price}} </h4>
                     </div>
-                    <button class="delete" (click)="cartService.DeleteProductFromCart(i)"><i class="fa fa-close"></i></button>
+                    <button class="delete" (click)="favService.DeleteProductFromFav(i)"><i class="fa fa-close"></i></button>
                   </div>
+                </div>
+                <div class="cart-summary">
+                  <small>{{favData.data[0].numInFav !== 0 ? favData.data.length : 0}} Товар(ов) выбрано</small>
                 </div>
               </div>
             </div>

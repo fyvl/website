@@ -4,6 +4,15 @@ export interface FavModelServer {
   total: number;
   data: [{
     product: ProductModelServer,
-    num: number
+    numInFav: number
   }];
+}
+
+
+export interface FavModelPublic  {
+  total: number;
+  prodData: [{
+    id: number,
+    inFav: number
+    }];
 }

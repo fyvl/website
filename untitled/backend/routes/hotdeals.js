@@ -5,7 +5,7 @@ const {database} = require('../config/helpers');
 /* GET All Products (with pagination) */
 router.get('/', function(req, res) {
 
-  database.table('products as p')
+  database.table('products as p where p.is_hot = 1')
       .withFields([
         'p.title as name',
         'p.price',

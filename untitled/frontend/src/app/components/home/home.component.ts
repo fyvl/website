@@ -3,6 +3,7 @@ import {ProductService} from "../../services/product.service";
 import {Router} from "@angular/router";
 import {ProductModelServer, serverResponse} from "../../models/product.model";
 import {CartService} from "../../services/cart.service";
+import { FavService } from 'src/app/services/fav.service';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private productService: ProductService,
               private cartService: CartService,
+              private favService: FavService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -33,6 +35,6 @@ export class HomeComponent implements OnInit {
   }
 
   AddToFav(id: number) {
-    this.cartService.AddProductToCart(id);
+    this.favService.AddProductToFav(id);
   }
 }

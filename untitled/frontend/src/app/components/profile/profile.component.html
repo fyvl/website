@@ -1,13 +1,9 @@
-<div class="container emp-profile">
+<div class="container emp-profile border">
   <form novalidate>
     <div class="row">
       <div class="col-md-4">
         <div class="profile-img">
           <img [src]="myUser?.photoUrl" alt="{{myUser?.firstName || myUser?.fname}}"/>
-          <div class="file btn btn-lg btn-primary">
-            Изменить фото
-            <input name="file" type="file"/>
-          </div>
         </div>
       </div>
       <div class="col-md-6">
@@ -16,46 +12,28 @@
             {{myUser?.name || (myUser.fname + ' ' + myUser.lname)}}
           </h5>
           <h6>
-            Web Developer and Designer
+            Веб-разработчик
           </h6>
-          <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+          <p class="proile-rating">Отзывы : <span>8/10</span></p>
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
               <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#home" id="home-tab"
-                 role="tab">About</a>
-            </li>
-            <li class="nav-item">
-              <a aria-controls="profile" aria-selected="false" class="nav-link" data-toggle="tab" href="#profile" id="profile-tab"
-                 role="tab">Timeline</a>
+                 role="tab">О Пользователе</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="col-md-2">
-        <button (click)="logout()" class="btn btn-secondary btn-sm" name="btnAddMore" type="button">Logout</button>
+        <button (click)="logout()" class="btn btn-secondary btn-sm" name="btnAddMore" type="button">Выйти</button>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <div class="profile-work">
-          <p>WORK LINK</p>
-          <a href="">Website Link</a><br/>
-          <a href="">Bootsnipp Profile</a><br/>
-          <a href="">Bootply Profile</a>
-          <p>SKILLS</p>
-          <a href="">Web Designer</a><br/>
-          <a href="">Web Developer</a><br/>
-          <a href="">WordPress</a><br/>
-          <a href="">WooCommerce</a><br/>
-          <a href="">PHP, .Net</a><br/>
-        </div>
-      </div>
       <div class="col-md-8">
         <div class="tab-content profile-tab" id="myTabContent">
           <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel">
             <div class="row">
               <div class="col-md-6">
-                <label>User Id</label>
+                <label>Id Пользователя</label>
               </div>
               <div class="col-md-6">
                 <p>{{myUser.id || myUser.userId}}</p>
@@ -63,7 +41,7 @@
             </div>
             <div class="row">
               <div class="col-md-6">
-                <label>Name</label>
+                <label>Имя</label>
               </div>
               <div class="col-md-6">
                 <p>{{myUser.name || myUser.username}}</p>
@@ -79,7 +57,7 @@
             </div>
             <div class="row">
               <div class="col-md-6">
-                <label>Phone</label>
+                <label>Телефон</label>
               </div>
               <div class="col-md-6">
                 <p>9999-778-754</p>
@@ -87,58 +65,10 @@
             </div>
             <div class="row">
               <div class="col-md-6">
-                <label>Profession</label>
+                <label>Профессия</label>
               </div>
               <div class="col-md-6">
-                <p>Web Developer and Designer</p>
-              </div>
-            </div>
-          </div>
-          <div aria-labelledby="profile-tab" class="tab-pane fade" id="profile" role="tabpanel">
-            <div class="row">
-              <div class="col-md-6">
-                <label>Experience</label>
-              </div>
-              <div class="col-md-6">
-                <p>Expert</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Hourly Rate</label>
-              </div>
-              <div class="col-md-6">
-                <p>10$/hr</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Total Projects</label>
-              </div>
-              <div class="col-md-6">
-                <p>230</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>English Level</label>
-              </div>
-              <div class="col-md-6">
-                <p>Expert</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Availability</label>
-              </div>
-              <div class="col-md-6">
-                <p>6 months</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <label>Your Bio</label><br/>
-                <p>Your detail description</p>
+                <p>Веб-разработчик</p>
               </div>
             </div>
           </div>
