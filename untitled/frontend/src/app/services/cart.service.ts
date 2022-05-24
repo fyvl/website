@@ -50,10 +50,9 @@ export class CartService {
 
     // Get the information from local storage
     const info: CartModelPublic = JSON.parse(localStorage.getItem('cart') || '{}');
-    console.log(info.prodData);
 
     // Check if the info variable is empty (null)
-    if (info.prodData == undefined) {}
+    if (info.prodData == undefined || info.prodData == null || info.prodData[0].inCart == 0) {}
     else {
       // Local storage is not empty and has some information
       this.cartClientData = info;
@@ -94,7 +93,7 @@ export class CartService {
         this.cartClientData.total = this.cartServerData.total;
         localStorage.setItem('cart', JSON.stringify(this.cartClientData));
         this.cartData$.next({...this.cartServerData});
-        this.toast.success(`${prod.name} added to the cart`, 'Product Added', {
+        this.toast.success(`${prod.name} добавлен в корзину`, 'Товар добавлен', {
           timeOut: 1500,
           progressBar: true,
           progressAnimation: 'increasing',
@@ -117,7 +116,7 @@ export class CartService {
           this.CalculateTotal();
           this.cartClientData.total = this.cartServerData.total;
           localStorage.setItem('cart', JSON.stringify(this.cartClientData));
-          this.toast.info(`${prod.name} quantity updated in the cart`, 'Product Updated', {
+          this.toast.info(`${prod.name} кол-во обновлено в корзине`, 'Товар Обновлен', {
             timeOut: 1500,
             progressBar: true,
             progressAnimation: 'increasing',
@@ -136,7 +135,7 @@ export class CartService {
             id: prod.id
           });
 
-          this.toast.success(`${prod.name} added to the cart`, 'Product Added', {
+          this.toast.success(`${prod.name} добавлен в корзину`, 'Товар добавлен', {
             timeOut: 1500,
             progressBar: true,
             progressAnimation: 'increasing',

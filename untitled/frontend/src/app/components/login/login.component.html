@@ -17,12 +17,12 @@
           </div>
 
           <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Пароль</label>
             <input class="form-control" id="password" type="password" [(ngModel)]="password" name="password" required>
           </div>
 
           <div class="d-flex flex-column align-items-center justify-content-around">
-            <button class="btn btn-primary btn-sm btn-block" (click)="login(myform)" [disabled]="myform.invalid || !myform.touched">Login</button>
+            <button class="btn btn-primary btn-sm btn-block" (click)="login(myform)" [disabled]="myform.invalid || !myform.touched">Войти</button>
           </div>
 
         </form>

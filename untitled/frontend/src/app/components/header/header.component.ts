@@ -10,14 +10,14 @@ import {UserService} from "../../services/user.service";
 })
 export class HeaderComponent implements OnInit {
   cartData!: CartModelServer;
-  cartTotal!: number;
+  cartTotal: number = 0;
   authState!: boolean;
 
   constructor(public cartService: CartService,
               private userService: UserService) { }
 
   ngOnInit(): void {
-    this.cartService.cartTotal$.subscribe(total => this.cartTotal = total)
+    this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);
 
     this.cartService.cartData$.subscribe(data => this.cartData = data);
 

@@ -6,8 +6,8 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="breadcrumb-tree">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">All Categories</a></li>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">Категории</a></li>
           <li><a href="#">{{product.category}}</a></li>
           <li class="active">{{product.name}}</li>
         </ul>
@@ -74,11 +74,11 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-o"></i>
             </div>
-            <a class="review-link" href="#">10 Review(s) | Add your review</a>
+            <a class="review-link" href="#">10 Отзыв(а/ов) | Добавить отзыв</a>
           </div>
           <div>
-            <h3 class="product-price">{{product.price | currency:'USD'}}</h3>
-            <span class="product-available">In Stock</span>
+            <h3 class="product-price"><i class="fa fa-ruble"></i> {{product.price}}</h3>
+            <span class="product-available">В Наличии</span>
           </div>
           <p>
             {{product.description}}
@@ -86,7 +86,7 @@
 
           <div class="add-to-cart">
             <div class="qty-label">
-              Qty
+              Кол.
               <div class="input-number">
                 <input type="number" [max]="product?.quantity >=1 ? product?.quantity : 0"
                        min="1"
@@ -98,22 +98,21 @@
                 <span class="qty-down" (click)="Decrease()">-</span>
               </div>
             </div>
-            <button class="add-to-cart-btn" (click)="addToCart(product?.id)"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
+            <button class="add-to-cart-btn" (click)="addToCart(product?.id)"><i class="fa fa-shopping-cart"></i> В Корзину</button>
           </div>
 
           <ul class="product-btns">
-            <li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
-            <li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
+            <li><a href="#"><i class="fa fa-heart-o"></i> добавить в избранное</a></li>
+            <li><a href="#"><i class="fa fa-exchange"></i> сравнить</a></li>
           </ul>
 
           <ul class="product-links">
-            <li>Category:</li>
+            <li>Категории:</li>
             <li><a href="#">{{product.category}}</a></li>
-            <li><a href="#">Accessories</a></li>
           </ul>
 
           <ul class="product-links">
-            <li>Share:</li>
+            <li>Поделиться:</li>
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>

@@ -7,6 +7,7 @@ export interface ProductModelServer {
   price: number;
   quantity: number;
   images: string;
+  is_hot: number;
 }
 
 

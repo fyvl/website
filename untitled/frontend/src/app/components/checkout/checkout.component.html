@@ -19,42 +19,42 @@
         <!-- Billing Details -->
         <div class="billing-details">
           <div class="section-title">
-            <h3 class="title">Billing address</h3>
+            <h3 class="title">Платежный адрес</h3>
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="first-name" placeholder="First Name">
+            <input class="input" type="text" name="first-name" placeholder="Имя">
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="last-name" placeholder="Last Name">
+            <input class="input" type="text" name="last-name" placeholder="Фамилия">
           </div>
           <div class="form-group">
             <input class="input" type="email" name="email" placeholder="Email">
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="address" placeholder="Address">
+            <input class="input" type="text" name="address" placeholder="Адрес">
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="city" placeholder="City">
+            <input class="input" type="text" name="city" placeholder="Город">
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="country" placeholder="Country">
+            <input class="input" type="text" name="country" placeholder="Страна">
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="zip-code" placeholder="ZIP Code">
+            <input class="input" type="text" name="zip-code" placeholder="Почтовый индекс">
           </div>
           <div class="form-group">
-            <input class="input" type="tel" name="tel" placeholder="Telephone">
+            <input class="input" type="tel" name="tel" placeholder="Телефон">
           </div>
           <div class="form-group">
             <div class="input-checkbox">
               <input type="checkbox" id="create-account">
               <label for="create-account">
                 <span></span>
-                Create Account?
+                Создать Аккаунт?
               </label>
               <div class="caption">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <input class="input" type="password" name="password" placeholder="Enter Your Password">
+                <input class="input" type="password" name="password" placeholder="Введите ваш пароль">
               </div>
             </div>
           </div>
@@ -64,38 +64,38 @@
         <!-- Shiping Details -->
         <div class="shiping-details">
           <div class="section-title">
-            <h3 class="title">Shiping address</h3>
+            <h3 class="title">Адрес доставки</h3>
           </div>
           <div class="input-checkbox">
             <input type="checkbox" id="shiping-address">
             <label for="shiping-address">
               <span></span>
-              Ship to a diffrent address?
+              Доставить по другому адресу?
             </label>
             <div class="caption">
               <div class="form-group">
-                <input class="input" type="text" name="first-name" placeholder="First Name">
+                <input class="input" type="text" name="first-name" placeholder="Имя">
               </div>
               <div class="form-group">
-                <input class="input" type="text" name="last-name" placeholder="Last Name">
+                <input class="input" type="text" name="last-name" placeholder="Фамилия">
               </div>
               <div class="form-group">
                 <input class="input" type="email" name="email" placeholder="Email">
               </div>
               <div class="form-group">
-                <input class="input" type="text" name="address" placeholder="Address">
+                <input class="input" type="text" name="address" placeholder="Адрес">
               </div>
               <div class="form-group">
-                <input class="input" type="text" name="city" placeholder="City">
+                <input class="input" type="text" name="city" placeholder="Город">
               </div>
               <div class="form-group">
-                <input class="input" type="text" name="country" placeholder="Country">
+                <input class="input" type="text" name="country" placeholder="Страна">
               </div>
               <div class="form-group">
-                <input class="input" type="text" name="zip-code" placeholder="ZIP Code">
+                <input class="input" type="text" name="zip-code" placeholder="Почтовый индекс">
               </div>
               <div class="form-group">
-                <input class="input" type="tel" name="tel" placeholder="Telephone">
+                <input class="input" type="tel" name="tel" placeholder="Телефон">
               </div>
             </div>
           </div>
@@ -104,7 +104,7 @@
 
         <!-- Order notes -->
         <div class="order-notes">
-          <textarea class="input" placeholder="Order Notes"></textarea>
+          <textarea class="input" placeholder="Детали заказа"></textarea>
         </div>
         <!-- /Order notes -->
       </div>
@@ -112,12 +112,12 @@
       <!-- Order Details -->
       <div class="col-md-5 order-details">
         <div class="section-title text-center">
-          <h3 class="title">Your Order</h3>
+          <h3 class="title">Ваш Заказ</h3>
         </div>
         <div class="order-summary">
           <div class="order-col">
-            <div><strong>PRODUCT</strong></div>
-            <div><strong>TOTAL</strong></div>
+            <div><strong>ТОВАР</strong></div>
+            <div><strong>ИТОГ</strong></div>
           </div>
           <div class="order-products">
             <div class="order-col" *ngFor="let c of cartData.data">
@@ -126,12 +126,12 @@
             </div>
           </div>
           <div class="order-col">
-            <div>Shiping</div>
-            <div><strong>FREE</strong></div>
+            <div>Доставка</div>
+            <div><strong>БЕСПЛАТНО</strong></div>
           </div>
           <div class="order-col">
-            <div><strong>TOTAL</strong></div>
-            <div><strong class="order-total">{{cartTotal | currency: ''}}</strong></div>
+            <div><strong>ИТОГ</strong></div>
+            <div><strong class="order-total">{{cartTotal | currency: 'RUB'}}</strong></div>
           </div>
         </div>
         <div class="payment-method">
@@ -139,7 +139,7 @@
             <input type="radio" name="payment" id="payment-1">
             <label for="payment-1">
               <span></span>
-              Direct Bank Transfer
+              Банковский Перевод
             </label>
             <div class="caption">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -149,7 +149,7 @@
             <input type="radio" name="payment" id="payment-2">
             <label for="payment-2">
               <span></span>
-              Cheque Payment
+              Оплата при получении
             </label>
             <div class="caption">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -159,7 +159,7 @@
             <input type="radio" name="payment" id="payment-3">
             <label for="payment-3">
               <span></span>
-              Paypal System
+              Paypal
             </label>
             <div class="caption">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -170,10 +170,10 @@
           <input type="checkbox" id="terms">
           <label for="terms">
             <span></span>
-            I've read and accept the <a href="#">terms & conditions</a>
+            Я прочитал и принимаю <a href="#">правила & условия</a>
           </label>
         </div>
-        <button class="btn btn-outline-danger btn-sm my-2  btn-block order-submit" (click)="onCheckout()">Place order</button>
+        <button class="btn btn-outline-danger btn-sm my-2  btn-block order-submit" (click)="onCheckout()">Разместить заказ</button>
       </div>
       <!-- /Order Details -->
     </div>
@@ -184,6 +184,6 @@
 <!-- /SECTION -->
 
 <div class="text-center my-5" *ngIf="cartData.total <= 0;">
-  <h4>Your Cart Is Empty</h4>
-  <button class="btn btn-primary btn-lg mt-3" routerLink="/">GO TO SHOP</button>
+  <h4>Ваша корзина пуста</h4>
+  <button class="btn btn-primary btn-lg mt-3" routerLink="/">ВЕРНУТЬСЯ В МАГАЗИН</button>
 </div>

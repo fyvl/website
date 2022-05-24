@@ -92,6 +92,10 @@
                     {{ p.quantity < 1 ?  "НЕТ В НАЛИЧИИ": "В корзину"}}
                   </button>
                 </div>
+                <button class="btn btn-outline-primary btn-sm btn-outline-danger"
+                (click)="AddToFav(p.id)">
+                  <i class="fa fa-heart"></i>
+                </button>
               </div>
 
             </div>

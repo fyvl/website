@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {database} = require('../config/helpers');
 
-/* GET All Products */
+/* GET All Products (with pagination) */
 router.get('/', function(req, res) {
   let page = (req.query.page != undefined && req.query.page != 0) ? req.query.page : 1; // set the current page number
   const limit = (req.query.limit != undefined && req.query.limit != 0) ? req.query.limit : 10; // set the limit of items per page
@@ -30,7 +30,8 @@ router.get('/', function(req, res) {
         'p.description',
         'p.quantity',
         'p.image',
-        'p.id'
+        'p.id',
+        'p.is_hot'
       ])
       .slice(startValue, endValue)
       .sort({id: .1})
@@ -64,7 +65,8 @@ router.get('/:prodId', (req, res) => {
         'p.quantity',
         'p.image',
         'p.images',
-        'p.id'
+        'p.id',
+        'p.is_hot'
       ])
       .filter({'p.id': productId})
       .get()

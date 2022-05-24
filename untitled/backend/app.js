@@ -22,6 +22,7 @@ const ordersRoute = require('./routes/orders');
 const usersRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
 const catRoute = require('./routes/categories');
+const hotRoute = require('./routes/hotdeals');
 
 // Use Routes
 app.use('/api/products', productsRoute);
@@ -29,6 +30,7 @@ app.use('/api/orders', ordersRoute);
 app.use('/api/users', usersRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/categories', catRoute);
+app.use('/api/hotdeals', hotRoute);
 
 app.use(logger('combined'));
 app.use(express.json());
