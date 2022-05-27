@@ -20,6 +20,10 @@ export class ProductService {
     });
   }
 
+  getAll(): Observable<serverResponse> {
+    return this.http.get<serverResponse>(this.serverUrl + '/products/all');
+  }
+
   /* GET SINGLE PRODUCT FROM SERVER */
   getSingleProduct(id: number): Observable<ProductModelServer> {
     return this.http.get<ProductModelServer>(this.serverUrl + '/products/' + id);

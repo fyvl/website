@@ -36,12 +36,12 @@
         <div class="col-md-6">
           <div class="header-search">
             <form>
-              <select class="input-select">
-                <option value="0">Категории</option>
-                <option value="1">Категория 01</option>
-                <option value="1">Категория 02</option>
-              </select>
-              <input class="input" placeholder="Ищите здесь">
+              <mat-select placeholder="Ищите здесь" [(ngModel)]="inpt">
+                <input class="input" [formControl]="pSelect" (ngModelChange)="searchProducts(pSelect)">
+                <mat-option *ngFor="let p of products">
+                  {{p.name}}
+                </mat-option>
+              </mat-select>
               <button class="search-btn">Поиск</button>
             </form>
           </div>
