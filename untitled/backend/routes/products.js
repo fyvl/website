@@ -48,37 +48,6 @@ router.get('/', function(req, res) {
       }).catch(err => console.log(err));
 });
 
-// GET ALLLLLLL PRODUCTS
-router.get('/all', function(req, res) {
-
-  database.table('products as p')
-      .join([{
-        table: 'categories as c',
-        on: 'c.id = p.cat_id'
-      }])
-      .withFields(['c.title as category',
-        'p.title as name',
-        'p.price',
-        'p.description',
-        'p.quantity',
-        'p.image',
-        'p.id',
-        'p.is_hot'
-      ])
-      .sort({id: .1})
-      .getAll()
-      .then(prods => {
-        if (prods.length > 0) {
-          res.status(200).json({
-            count: prods.length,
-            products: prods
-          });
-        } else {
-          res.json({message: 'No products found'});
-        }
-      }).catch(err => console.log(err));
-});
-
 /* GET Single Product */
 router.get('/:prodId', (req, res) => {
   let productId = req.params.prodId;

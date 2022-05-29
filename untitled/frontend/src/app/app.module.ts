@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,7 +39,7 @@ import { HotdealsComponent } from './components/hotdeals/hotdeals.component';
     CatalogComponent,
     CategoryComponent,
     ContactsComponent,
-    HotdealsComponent,
+    HotdealsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,8 +50,7 @@ import { HotdealsComponent } from './components/hotdeals/hotdeals.component';
     NgxSpinnerModule,
     ToastrModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule,
-    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
